@@ -27,6 +27,21 @@ public class ProductReposuitory {
         productList.add(new Product(3L, "Pasta", 45));
         productList.add(new Product(4L, "Milk", 60));
         productList.add(new Product(5L, "Meat", 90));
+        productList.add(new Product(6L, "Potaro", 20));
+        productList.add(new Product(7L, "Beet", 15));
+        productList.add(new Product(8L, "Onion", 16));
+        productList.add(new Product(9L, "Cucumber", 20));
+        productList.add(new Product(10L, "Chocolate", 65));
+        productList.add(new Product(11L, "Marmalade", 50));
+        productList.add(new Product(12L, "Biscuits", 45));
+        productList.add(new Product(13L, "Cake", 65));
+        productList.add(new Product(14L, "Jam", 55));
+        productList.add(new Product(15L, "Tea", 60));
+        productList.add(new Product(16L, "Coffee", 85));
+        productList.add(new Product(17L, "Bread", 25));
+        productList.add(new Product(18L, "Fish", 95));
+        productList.add(new Product(19L, "Shrimp", 90));
+        productList.add(new Product(20L, "Squid", 55));
     }
 
     public Product addOrUpdateProduct(Product product){
