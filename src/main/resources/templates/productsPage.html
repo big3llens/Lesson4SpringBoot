@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>Students</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Фильтр</h1>
+    <form method="get" th:action="@{'/products'}">
+        <input class="form-control" th:value="${param.min != null ? param.min : ''}" type="number" placeholder="Минимальная стоимость" name="min"/>
+        <input class="form-control" th:value="${param.max != null ? param.max : ''}" type="number" placeholder="Максимальная стоимость" name="max"/>
+        <button class="btn btn-primary" type="submit">Найти</button>
+    </form>
+    <h1>Список продуктов</h1>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Наименование</th>
+            <th>Стоимость</th>
+            <th>Удалить</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="p : ${productList}">
+            <td th:text="${p.id}"/>
+            <td th:text="${p.name}"/>
+            <td th:text="${p.cost}"/>
+            <td>
+                <a class="btn btn-danger" th:href="@{'/products/remove/' + ${p.id}}">Удалить</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <form method="get" th:action="@{'/products/findById/' + ${}}">
+        <input class="form-control" type="number" placeholder="Найти товар по ID" name="id"/>
+        <button class="btn btn-primary" type="submit">Найти</button>
+    </form>
+    <form method="get" th:action="@{'/products/add'}">
+        <input class="form-control" type="number" placeholder="ID товара" name="id"/>
+        <input class="form-control" type="text" placeholder="Наименование товара" name="name"/>
+        <input class="form-control" type="number" placeholder="Стоимость товара" name="cost"/>
+        <button class="btn btn-primary" type="submit">Добавить</button>
+    </form>
+</div>
+
+</body>
