@@ -18,7 +18,7 @@ public class ProductController {
 
 
     @RequestMapping
-    public String hello(Model model, @RequestParam(value = "min", required = false) Integer min, @RequestParam(value = "name", required = false) Integer max) {
+    public String hello(Model model, @RequestParam(value = "min", required = false) Integer min, @RequestParam(value = "max", required = false) Integer max) {
         model.addAttribute("productList", productService.getProductList(min, max));
         return "productsPage";
     }
