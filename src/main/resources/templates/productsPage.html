@@ -39,10 +39,6 @@
         </tr>
         </tbody>
     </table>
-    <form method="get" th:action="@{'/products/findById/' + ${}}">
-        <input class="form-control" type="number" placeholder="Найти товар по ID" name="id"/>
-        <button class="btn btn-primary" type="submit">Найти</button>
-    </form>
     <form method="get" th:action="@{'/products/add'}">
         <input class="form-control" type="number" placeholder="ID товара" name="id"/>
         <input class="form-control" type="text" placeholder="Наименование товара" name="name"/>
